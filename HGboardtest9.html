@@ -1,0 +1,1448 @@
+<!-- Standard boilerplate to start hangouts.  Without these, your Hangout will not start. -->
+<script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
+<script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.4"></script>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HangoutBoardTest8</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <style type="text/css">
+        <!--
+        body {
+            background-color: #000000;
+        }
+        .pointer {
+            cursor: pointer;
+        }
+        .openhand {
+            cursor: url(https://mail.google.com/mail/images/2/openhand.cur),default!important;
+        }
+        .closedhand {
+            cursor: url(https://mail.google.com/mail/images/2/closedhand.cur),deafult!important;
+        }
+        .button {
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+            background: -moz-linear-gradient(top, #fff, #ddd);  
+            border: 1px solid #bbb;
+        }
+        .button:active {
+            background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#333)); 
+            background: -moz-linear-gradient(bottom, #ddd, #aaa); }
+        -->
+        .canvasbutton {
+            -webkit-animation-delay: 0s;
+            -webkit-animation-direction: normal;
+            -webkit-animation-duration: 0s;
+            -webkit-animation-fill-mode: none;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-name: none;
+            -webkit-animation-play-state: running;
+            -webkit-animation-timing-function: ease;
+            -webkit-app-region: no-drag;
+            -webkit-appearance: none;
+            -webkit-backface-visibility: visible;
+            -webkit-background-clip: border-box;
+            -webkit-background-composite: source-over;
+            -webkit-background-origin: padding-box;
+            -webkit-background-size: auto;
+            -webkit-border-fit: border;
+            -webkit-border-horizontal-spacing: 0px;
+            -webkit-border-image: none;
+            -webkit-border-vertical-spacing: 0px;
+            -webkit-box-align: stretch;
+            -webkit-box-decoration-break: slice;
+            -webkit-box-direction: normal;
+            -webkit-box-flex: 0;
+            -webkit-box-flex-group: 1;
+            -webkit-box-lines: single;
+            -webkit-box-ordinal-group: 1;
+            -webkit-box-orient: horizontal;
+            -webkit-box-pack: start;
+            -webkit-box-reflect: none;
+            -webkit-box-shadow: none;
+            -webkit-clip-path: none;
+            -webkit-column-break-after: auto;
+            -webkit-column-break-before: auto;
+            -webkit-column-break-inside: auto;
+            -webkit-column-count: auto;
+            -webkit-column-gap: normal;
+            -webkit-column-rule-color: rgb(64, 64, 64);
+            -webkit-column-rule-style: none;
+            -webkit-column-rule-width: 0px;
+            -webkit-column-span: none;
+            -webkit-column-width: auto;
+            -webkit-filter: none;
+            -webkit-font-smoothing: antialiased;
+            -webkit-highlight: none;
+            -webkit-hyphenate-character: auto;
+            -webkit-line-box-contain: block inline replaced;
+            -webkit-line-break: auto;
+            -webkit-line-clamp: none;
+            -webkit-locale: it;
+            -webkit-margin-after-collapse: collapse;
+            -webkit-margin-before-collapse: collapse;
+            -webkit-mask-box-image: none;
+            -webkit-mask-box-image-outset: 0px;
+            -webkit-mask-box-image-repeat: stretch;
+            -webkit-mask-box-image-slice: 0 fill;
+            -webkit-mask-box-image-source: none;
+            -webkit-mask-box-image-width: auto;
+            -webkit-mask-clip: border-box;
+            -webkit-mask-composite: source-over;
+            -webkit-mask-image: none;
+            -webkit-mask-origin: border-box;
+            -webkit-mask-position: 0% 0%;
+            -webkit-mask-repeat: repeat;
+            -webkit-mask-size: auto;
+            -webkit-perspective: none;
+            -webkit-perspective-origin: 99.5px 19px;
+            -webkit-print-color-adjust: economy;
+            -webkit-rtl-ordering: logical;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.180392);
+            -webkit-text-combine: none;
+            -webkit-text-decorations-in-effect: none;
+            -webkit-text-emphasis-color: rgb(64, 64, 64);
+            -webkit-text-emphasis-position: over;
+            -webkit-text-emphasis-style: none;
+            -webkit-text-fill-color: rgb(64, 64, 64);
+            -webkit-text-orientation: vertical-right;
+            -webkit-text-security: none;
+            -webkit-text-stroke-color: rgb(64, 64, 64);
+            -webkit-text-stroke-width: 0px;
+            -webkit-transform: none;
+            -webkit-transform-origin: 99.5px 19px;
+            -webkit-transform-style: flat;
+            -webkit-transition-delay: 0s;
+            -webkit-transition-duration: 0s;
+            -webkit-transition-property: all;
+            -webkit-transition-timing-function: ease;
+            -webkit-user-drag: auto;
+            -webkit-user-modify: read-only;
+            -webkit-user-select: none;
+            -webkit-writing-mode: horizontal-tb;
+            align-content: stretch;
+            align-items: stretch;
+            align-self: stretch;
+            alignment-baseline: auto;
+            backface-visibility: visible;
+            background-attachment: scroll;
+            background-blend-mode: normal;
+            background-clip: border-box;
+            background-color: rgb(255, 255, 255);
+            background-image: -webkit-linear-gradient(top, transparent, transparent);
+            background-origin: padding-box;
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            background-size: auto;
+            baseline-shift: baseline;
+            border-bottom-color: rgba(0, 0, 0, 0.14902);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-collapse: separate;
+            border-image-outset: 0px;
+            border-image-repeat: stretch;
+            border-image-slice: 100%;
+            border-image-source: none;
+            border-image-width: 1;
+            border-left-color: rgba(0, 0, 0, 0.14902);
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-right-color: rgba(0, 0, 0, 0.14902);
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-top-color: rgba(0, 0, 0, 0.14902);
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-top-style: solid;
+            border-top-width: 1px;
+            bottom: auto;
+            box-shadow: none;
+            box-sizing: content-box;
+            buffered-rendering: auto;
+            caption-side: top;
+            clear: none;
+            clip: auto;
+            clip-path: none;
+            clip-rule: nonzero;
+            color: rgb(64, 64, 64);
+            color-interpolation: srgb;
+            color-interpolation-filters: linearrgb;
+            color-rendering: auto;
+            cursor: default;
+            direction: ltr;
+            display: inline-block;
+            dominant-baseline: auto;
+            empty-cells: show;
+            fill: rgb(0, 0, 0);
+            fill-opacity: 1;
+            fill-rule: nonzero;
+            filter: none;
+            flex-basis: auto;
+            flex-direction: row;
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-wrap: nowrap;
+            float: none;
+            flood-color: rgb(0, 0, 0);
+            flood-opacity: 1;
+            font-family: Roboto, Arial, sans-serif;
+            font-kerning: auto;
+            font-size: 14px;
+            font-style: normal;
+            font-variant: normal;
+            font-variant-ligatures: normal;
+            font-weight: bold;
+            glyph-orientation-horizontal: 0deg;
+            glyph-orientation-vertical: auto;            
+            image-rendering: auto;
+            justify-content: flex-start;
+            left: auto;
+            letter-spacing: normal;
+            lighting-color: rgb(255, 255, 255);
+            line-height: 28px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: disc;             
+            margin: 2px; 
+            float: left;
+            height: 35px;
+            marker-end: none;
+            marker-mid: none;
+            marker-start: none;
+            mask: none;
+            mask-type: luminance;
+            max-height: none;
+            max-width: none;
+            min-height: 0px;
+            min-width: 54px;
+            object-fit: fill;
+            object-position: 50% 50%;
+            opacity: 1;
+            order: 0;
+            orphans: auto;
+            outline-color: rgb(64, 64, 64);
+            outline-offset: 0px;
+            outline-style: none;
+            outline-width: 0px;
+            overflow-wrap: normal;
+            overflow-x: visible;
+            overflow-y: visible;
+            padding: 0px;
+            page-break-after: auto;
+            page-break-before: auto;
+            page-break-inside: auto;
+            paint-order: fill stroke markers;
+            perspective: none;
+            perspective-origin: 99.5px 19px;
+            pointer-events: auto;
+            position: relative;
+            resize: none;
+            right: auto;
+            shape-rendering: auto;
+            speak: normal;
+            stop-color: rgb(0, 0, 0);
+            stop-opacity: 1;
+            stroke: none;
+            stroke-dasharray: none;
+            stroke-dashoffset: 0;
+            stroke-linecap: butt;
+            stroke-linejoin: miter;
+            stroke-miterlimit: 4;
+            stroke-opacity: 1;
+            stroke-width: 1;
+            tab-size: 8;
+            table-layout: auto;
+            text-align: center;
+            text-anchor: start;
+            text-decoration: none solid rgb(64, 64, 64);
+            text-indent: 0px;
+            text-overflow: clip;
+            text-rendering: auto;
+            text-shadow: none;
+            text-transform: none;
+            top: auto;
+            touch-action: auto;
+            transform: none;
+            transform-origin: 99.5px 19px;
+            transform-style: flat;
+            transition-delay: 0s;
+            transition-duration: 0s;
+            transition-property: all;
+            transition-timing-function: ease;
+            unicode-bidi: normal;
+            vector-effect: none;
+            vertical-align: baseline;
+            visibility: visible;
+            white-space: nowrap;
+            widows: auto;
+            width: 177px;
+            will-change: auto;
+            word-break: normal;
+            word-spacing: 0px;
+            word-wrap: normal;
+            writing-mode: lr-tb;
+            z-index: auto;
+            zoom: 1;
+        }
+        .highlightcanvasbutton {
+            background-color:#bddbfa;
+        }
+        .canvasbutton:hover {
+            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+            background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+            background-color:#dfdfdf;
+            cursor: pointer;
+        }.canvasbutton:active {
+            position:relative;
+            top:1px;
+        }
+        .formcontainer{
+            background-color:#bddbfa;            
+            border:1px solid #000;
+            position:absolute;            
+            border-radius:4px;
+            overflow:auto;
+            box-shadow:0 0 5px #000
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+
+
+
+    <BR>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <BR>
+    <div style="width: 800; overflow: hidden;">
+        <button class="canvasbutton" id="newPost" style="width: 110; margin-left: 0px;">
+            <span class="glyphicon glyphicon-plus"></span> New Post-it
+        </button>
+        <button class="canvasbutton" id="line" style="width: 95;">
+            <span class="glyphicon glyphicon-pencil"></span> New Line
+        </button>        
+        <button class="canvasbutton" id="delete" style="width: 90;">
+            <span class="glyphicon glyphicon-remove-sign"></span> Delete
+        </button>
+        <button class="canvasbutton" id="matrix" style="width: 90;">
+            <span class="glyphicon glyphicon-remove-sign"></span> Matrix
+        </button>
+        <button class="canvasbutton" id="double" style="width: 90;">
+            <span class="glyphicon glyphicon-remove-sign"></span> Double
+        </button>
+        <button class="canvasbutton" id="undo" style="float: right; width: 120;" onclick="cs.undo()">
+            <span class="glyphicon glyphicon-refresh"></span> Undo Clear
+        </button>
+        <button class="canvasbutton" id="clear" style="float: right; width: 120;" onclick="cs.clearState()">
+            <span class="glyphicon glyphicon-unchecked"></span> Clear Board
+        </button>    
+    </div>
+    <style>
+        .canvas {
+            position:absolute; 
+            left:0px;
+            top:0px;        
+        }
+    </style>   
+    <div id="InfoWrapper"></div>
+    <table width="100%">
+        <tr>
+            <td width="800">
+                <div id ="externalDiv" style="position:relative">
+                    <div id = "boardDiv" style="position: relative; width: 800; height: 500; overflow: scroll; float: left;">
+                        <canvas id="shadowCanvas" class="canvas" style="z-index: 3;" width="1200" height="800">
+                        </canvas>
+                        <canvas id="postItCanvas" class="canvas" style="z-index: 2;" width="1200" height="800">
+                        </canvas>    
+                        <canvas id="pencilCanvas" class="canvas" style="z-index: 1;" width="1200" height="800">
+                        </canvas>
+                        <canvas id="matrixCanvas" class="canvas" style="z-index: 0; background-color: white;" width="1200" height="800">
+                        </canvas>
+                    </div>
+                    <div id="InputsWrapper" style="position: absolute; z-index: 3; left: 240px; top: 180px"></div>
+                </div>  
+            </td>         
+        </tr>
+    </table>
+    <button class="canvasbutton" id="getInfo" style="width: 300;" onclick="getInfo()">
+        <span class="glyphicon glyphicon-unchecked"></span> Get Console Info on Shared Object
+    </button>    
+
+    <script>
+        window.cs = new CanvasState(document.getElementById('postItCanvas'), document.getElementById('pencilCanvas'), document.getElementById('shadowCanvas'), document.getElementById('matrixCanvas'));
+        var upvoted = [];
+        var downvoted = [];
+        var n = 0;
+        var currentPostIt = null;
+        var color = null;
+        var mioIdStart = 0;
+        var mioId = 0;
+        var formText = "";
+        var inputReady = false;
+        var InfoWrapper = $("#InfoWrapper");
+        var InputsWrapper = $("#InputsWrapper");
+        var newPost = $('#newPost');
+        var select = $('#select');
+        var newLine = $('#line');
+        var elDelete = $('#delete');
+        var newMatrix = $('#matrix');
+        var doubleSize = $('#double');
+        $(newPost).click(function () {
+            if (inputReady) {
+                $(".formcontainer").remove();
+                inputReady = false;
+            }
+            inputReady = true;
+            $(InputsWrapper).append('<div class="formcontainer">' + '<button class="removeclass0" style="float: right">x</button>' + '<br>' +
+                    '<label>Add your post-it to the canvas</label>' + '<br>' +
+                    '<input type="text" id="postittext" name="mytext[]" size="35" maxlength="255"' +
+                    '" placeholder="Insert your post-it text here"/>' + '<button class="addclass0">Add</button>' +
+                    '<select id="color" style="float: right"><option value="lightseagreen">LightSeaGreen</option><option value="burlywood">Wood</option><option value="darkorange">DarkOrange</option><option value="lightpink">LightPink</option>\n\
+                    <option value="gold">Gold</option> </select>' + '<br>' +
+                    '</div>');
+            return false;
+        });
+        $("body").on("click", ".removeclass0", function () {
+            $(this).parent('div').remove(); // To Remove Name Field        
+            return false;
+        });
+        $("body").on("click", ".addclass0", function () {
+            formText = $("#postittext").val();
+            color = $("#color").val();
+            console.log(color);
+            cs.setTool('newPost');
+            $(this).parent('div').remove();
+            return false;
+        });
+        $("body").on("click", ".editclass0", function () {
+            currentPostIt.setText($("#postittext").val());
+            currentPostIt.setFill($("#color").val());
+            setShapeState(currentPostIt);
+            $(this).parent('div').remove();
+            return false;
+        });
+        $("body").on("click", ".createsectionsclass0", function () {
+            var sections = parseInt($("#sectionsnumber").val());
+            var sharedObjectKey = "sections";
+            var sectionsStr = JSON.stringify(sections);
+            var obj = {};
+            obj[sharedObjectKey] = sectionsStr;
+            gapi.hangout.data.submitDelta(obj);
+            $(this).parent('div').remove();
+            return false;
+        });
+        $(newLine).click(function () {
+            if (cs.getAction() === "line") {
+                cs.setDefault();
+                console.log("line");
+            }
+            else {
+                cs.setTool('line');
+                console.log("ok");
+            }
+        });
+        $(elDelete).click(function () {
+            cs.delete();
+        });
+        $(matrix).click(function () {
+            if (inputReady) {
+                $(".formcontainer").remove();
+                inputReady = false;
+            }
+            inputReady = true;
+            $(InputsWrapper).append('<div class="formcontainer">' + '<button class="removeclass0" style="float: right">x</button>' + '<br>' +
+                    '<label style="width:300px;">Choose the number of canvas sections</label>' +
+                    '<button class="createsectionsclass0">Create</button>' +
+                    '<select id="sectionsnumber" style="float: right"><option value="2">2 Sections</option><option value="4">4 Sections</option>\n\
+                    <option value="6">6 Sections</option><option value="9">9 Sections</option></select>' + '<br>' +
+                    '</div>');
+        });
+        $(doubleSize).click(function () {
+            var key = "size";
+            var value = "double";
+            var obj = {};
+            obj[key] = value;
+            gapi.hangout.data.submitDelta(obj);
+        });
+        function editPostIt(shape) {
+            if (inputReady) {
+                $(".formcontainer").remove();
+                inputReady = false;
+            }
+            currentPostIt = shape;
+            inputReady = true;
+            $(InputsWrapper).append('<div class="formcontainer">' + '<button class="removeclass0" style="float: right">x</button>' + '<br>' +
+                    '<label>Edit this post-it</label>' + '<br>' + '<input type="text" id="postittext" name="mytext[]" value="' + shape.text + '" size="35" maxlength="255"' +
+                    '" placeholder="Insert your post-it text here"/>' +
+                    '<select id="color" style="float: right"><option value="lightseagreen">LightSeaGreen</option><option value="burlywood">Wood</option><option value="darkorange">DarkOrange</option><option value="lightpink">LightPink</option>\n\
+                    <option value="gold">Gold</option> </select>' +
+                    '<button class="editclass0">Edit</button>' + '<br>' +
+                    '</div>');
+            return false;
+        }
+        function hasBeenUpVoted(id) {
+            for (var i = 0; i < upvoted.length; i++) {
+                if (upvoted[i] == id) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        function hasBeenDownVoted(id) {
+            for (var i = 0; i < downvoted.length; i++) {
+                if (downvoted[i] == id) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        gapi.hangout.onApiReady.add(function (e) {
+            var state = gapi.hangout.data.getState();
+            updateInternalState(state.validShapes);
+            updateInternalLinesState(state.validLines);
+            var currentAssignment = state.idassignment;
+            if (currentAssignment === undefined) {
+                currentAssignment = 0;
+            }
+            mioIdStart = parseInt(currentAssignment) + (Math.floor((Math.random() * 10)) * 2000);
+            console.log('id corrente = ' + mioIdStart);
+            mioId = mioIdStart;
+            var newAssignment = parseInt(currentAssignment) + 20000;
+            var nuovoid = JSON.stringify(newAssignment);
+            gapi.hangout.data.submitDelta({"idassignment": nuovoid});
+        });
+        function Line(id, beginX, beginY, endX, endY, color) {
+            this.id = id;
+            this.beginX = beginX;
+            this.beginY = beginY;
+            this.endX = endX;
+            this.endY = endY;
+            this.color = color;
+        }
+        Line.prototype.draw = function (ctx) {
+            ctx.beginPath();
+            ctx.strokeStyle = this.color;
+            ctx.moveTo(this.beginX, this.beginY);
+            ctx.lineTo(this.endX, this.endY);
+            ctx.stroke();
+        };
+        Line.prototype.setColor = function (color) {
+            this.color = color;
+        };
+        Line.prototype.contains = function (mx, my) {
+            return isOnLine(this.beginX, this.beginY, this.endX,
+                    this.endY, mx, my);
+        };
+        Line.prototype.tipo = function () {
+            return "Line";
+        };
+        function isOnLine(x, y, endx, endy, px, py) {
+            var d = (Math.abs((endx - x) * (y - py) - (x - px) * (endy - y))) / (Math.sqrt(Math.pow(endx - x, 2) + Math.pow(endy - y, 2)));
+            var boolean = ((px >= x - 4) && (px <= endx + 4)) || ((px <= x + 4) && (px >= endx - 4));
+            if (boolean && (d < 4)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        function Shape(id, text, x, y, w, h, likes, dislikes, fill) {
+            this.id = id;
+            this.text = text || "";
+            this.x = x;
+            this.y = y;
+            this.w = w || 220;
+            this.h = h || 80;
+            this.ls = likes || 0;
+            this.ds = dislikes || 0;
+            this.fill = fill || 'lightseagreen';
+        }
+        Shape.prototype.draw = function (ctx) {
+            ctx.font = "20px Georgia";
+            var ordinato = ordinaTesto(ctx, this.text, 200);
+            var numeroRighe = ordinato.length;
+            this.h = 40 + (numeroRighe * 20);
+            ctx.fillStyle = this.fill;
+            ctx.fillRect(this.x, this.y, this.w, this.h);
+            ctx.textAlign = "center";
+            ctx.textBaseline = "top";
+            ctx.font = "20px Georgia";
+            ctx.fillStyle = 'black';
+            for (var i = 0; i < numeroRighe; i++) {
+                ctx.fillText(ordinato[i], this.x + (this.w / 2), this.y + 10 + (i * 20));
+            }
+            ctx.textBaseline = "middle";
+            ctx.font = "10px Arial";
+            var likes = "Likes: " + this.ls;
+            var dislikes = "Dislikes: " + this.ds;
+            ctx.fillText(likes, (this.x + (this.w / 4)), (this.y + (this.h - 10)));
+            ctx.fillText(dislikes, (this.x + (this.w / (3 / 2))), (this.y + (this.h - 10)));
+            ctx.fillRect((this.x + (this.w / (5 / 2))), (this.y + (this.h - 12)), 12, 4);
+            ctx.fillRect((this.x + (this.w / (5 / 2)) + 4), (this.y + (this.h - 12) - 4), 4, 12);
+            ctx.fillRect((this.x + (this.w - (this.w / 6))), (this.y + (this.h - 12)), 12, 4);
+        };
+        Shape.prototype.tipo = function () {
+            return "Shape";
+        };
+        Shape.prototype.setText = function (newText) {
+            this.text = newText;
+        };
+        Shape.prototype.setFill = function (color) {
+            this.fill = color;
+        };
+        Shape.prototype.addLike = function () {
+            this.ls = this.ls + 1;
+        };
+        Shape.prototype.removeLike = function () {
+            this.ls = this.ls - 1;
+        };
+        Shape.prototype.addDislike = function () {
+            this.ds = this.ds + 1;
+        };
+        Shape.prototype.removeDislike = function () {
+            this.ds = this.ds - 1;
+        };
+        function ordinaTesto(context, text, fitWidth) {
+            fitWidth = fitWidth || 0;
+            var rigaCorrente = "";
+            var testoOrdinato = [];
+            if (fitWidth <= 0) {
+                testoOrdinato.push(text);
+                return;
+            }
+            var words = text.split(' ');
+            var i = 0;
+            while (i <= (words.length - 1)) {
+                var parolaCorrente = words[i] + ' ';
+                var vecchiaRiga = rigaCorrente;
+                rigaCorrente = rigaCorrente + parolaCorrente;
+                if (context.measureText(rigaCorrente).width > fitWidth) {
+                    if (vecchiaRiga === "") {
+                        testoOrdinato.push(rigaCorrente);
+                        rigaCorrente = "";
+                        i++;
+                    }
+                    else {
+                        testoOrdinato.push(vecchiaRiga);
+                        rigaCorrente = "";
+                    }
+                }
+                else {
+                    i++;
+                }
+            }
+            if (rigaCorrente !== "") {
+                testoOrdinato.push(rigaCorrente);
+            }
+            return testoOrdinato;
+        }
+        ;
+        Shape.prototype.contains = function (mx, my) {
+            if ((this.x <= mx) && (mx <= (this.x + this.w)) &&
+                    (this.y <= my) && (my <= (this.y + this.h))) {
+                return true;
+            }
+            return false;
+        };
+        Shape.prototype.mouseIsOnUpVote = function (mx, my) {
+            if (((this.x + (this.w / (5 / 2))) <= mx) && (mx <= (this.x + (this.w / (5 / 2)) + 12)) &&
+                    ((this.y + (this.h - 12) - 4) <= my) && (my <= (this.y + (this.h - 12) + 8))) {
+                return true;
+            }
+            return false;
+        };
+        Shape.prototype.mouseIsOnDownVote = function (mx, my) {
+            if (((this.x + (this.w - (this.w / 6))) <= mx) && (mx <= (this.x + (this.w - (this.w / 6)) + 12)) &&
+                    ((this.y + (this.h - 12) - 4) <= my) && (my <= (this.y + (this.h - 12) + 8))) {
+                return true;
+            }
+            return false;
+        };
+        function CanvasState(canvas, pencilCanvas, shadowCanvas, matrixCanvas) {
+            this.canvas = canvas;
+            this.ctx = this.canvas.getContext("2d");
+            this.pencilCanvas = pencilCanvas;
+            this.pencilCtx = this.pencilCanvas.getContext("2d");
+            this.shadowCanvas = shadowCanvas;
+            this.shadowCtx = this.shadowCanvas.getContext("2d");
+            this.matrixCanvas = matrixCanvas;
+            this.matrixCtx = this.matrixCanvas.getContext("2d");
+            this.idShapes = [];
+            this.shapes = [];
+            this.idLines = [];
+            this.lines = [];
+            this.numberOfSections = 0;
+            this.valid = false;
+            this.defaultColor = 'black';
+            this.defaultAction = "select";
+            this.action = "select";
+            this.currentLine = null;
+            this.selection = null;
+            this.dragoffx = 0;
+            this.dragoffy = 0;
+            var myState = this;
+            shadowCanvas.addEventListener('mouseover', function (e) {
+                var action = myState.action;
+                var mouse = myState.getMouse(this.canvas, e);
+                var mx = mouse.x;
+                var my = mouse.y;
+                var shapes = myState.shapes;
+                var lines = myState.lines;
+                switch (action) {
+                    case "line":
+                        document.body.style.cursor = "crosshair";
+                        break;
+                    case 'newPost':
+                        document.body.style.cursor = "none";
+                        break;
+                }
+            });
+            shadowCanvas.addEventListener('mouseout', function (e) {
+                document.body.style.cursor = "default";
+            });
+            shadowCanvas.addEventListener('mousedown', function (e) {
+                var mouse = myState.getMouse(this.canvas, e);
+                var mx = mouse.x;
+                var my = mouse.y;
+                var action = myState.action;
+                var shapes = myState.shapes;
+                var lines = myState.lines;
+                var l = shapes.length;
+                switch (action) {
+                    case "line":
+                        beginX = mx;
+                        beginY = my;
+                        myState.action = 'drawLine';
+                        break;
+                    case "newPost":
+                        myState.shadowCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                        document.body.style.cursor = "default";
+                        myState.writePostIt(formText, mx, my, color);
+                        myState.setDefault();
+                        break;
+                    case "select":
+                        for (var i = shapes.length - 1; i >= 0; i--) {
+                            if (shapes[i].contains(mx, my)) {
+                                if (shapes[i].mouseIsOnUpVote(mx, my)) {
+                                    if (hasBeenUpVoted(shapes[i].id)) {
+                                        return;
+                                    }
+                                    else {
+                                        var templ = shapes[i];
+                                        templ.addLike();
+                                        upvoted.push(templ.id);
+                                        if (hasBeenDownVoted(templ.id)) {
+                                            templ.removeDislike();
+                                            var index = downvoted.indexOf(templ.id);
+                                            downvoted.splice(index, 1);
+                                        }
+                                        setShapeLikesState(templ);
+                                    }
+                                }
+                                else if (shapes[i].mouseIsOnDownVote(mx, my)) {
+                                    if (hasBeenDownVoted(shapes[i].id)) {
+                                        return;
+                                    }
+                                    else {
+                                        var tempd = shapes[i];
+                                        tempd.addDislike();
+                                        downvoted.push(tempd.id);
+                                        if (hasBeenUpVoted(tempd.id)) {
+                                            tempd.removeLike();
+                                            var index = upvoted.indexOf(tempd.id);
+                                            upvoted.splice(index, 1);
+                                        }
+                                        setShapeLikesState(tempd);
+                                    }
+
+                                }
+                                else {
+                                    $("#boardDiv").removeClass("openhand");
+                                    $("#boardDiv").addClass("closedhand");
+                                    var mySel = shapes[i];
+                                    console.log('ho selezionato un post-it con id: ' + mySel.id);
+                                    myState.dragoffx = mx - mySel.x;
+                                    myState.dragoffy = my - mySel.y;
+                                    myState.action = 'dragging';
+                                    myState.selection = mySel;
+                                    myState.valid = false;
+                                }
+                                return;
+                            }
+                        }
+                        for (var i = lines.length - 1; i >= 0; i--) {
+                            if (lines[i].contains(mx, my)) {
+                                $("#boardDiv").removeClass("openhand");
+                                $("#boardDiv").addClass("closedhand");
+                                var mySel = lines[i];
+                                myState.selection = mySel;
+                                myState.valid = false;
+                                console.log("la mia selezione è " + myState.selection);
+                                var id = lines[i].id;
+                                var bX = lines[i].beginX;
+                                var bY = lines[i].beginY;
+                                var eX = lines[i].endX;
+                                var eY = lines[i].endY;
+                                var lunghezza = Math.sqrt(Math.pow(eX - bX, 2) + Math.pow(eY - bY, 2));
+                                var distanzadabegin = Math.sqrt(Math.pow(mx - bX, 2) + Math.pow(my - bY, 2));
+                                var distanzadaend = Math.sqrt(Math.pow(mx - eX, 2) + Math.pow(my - eY, 2));
+                                if (distanzadabegin <= 8) {
+                                    lineId = id;
+                                    beginX = eX;
+                                    beginY = eY;
+                                    myState.action = 'changeLine';
+                                    return;
+                                }
+                                else if (distanzadaend <= 8) {
+                                    lineId = id;
+                                    beginX = bX;
+                                    beginY = bY;
+                                    myState.action = 'changeLine';
+                                    return;
+                                }
+                                else {
+                                    lineId = id;
+                                    beginX = bX;
+                                    beginY = bY;
+                                    endX = eX;
+                                    endY = eY;
+                                    currentX = mx;
+                                    currentY = my;
+                                    myState.action = 'dragLine';
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                        break;
+                }
+                if (myState.selection) {
+                    myState.selection = null;
+                    myState.valid = false;
+                }
+            }, true);
+            shadowCanvas.addEventListener('dblclick', function (e) {
+                var action = myState.action;
+                var mouse = myState.getMouse(this.canvas, e);
+                var mx = mouse.x;
+                var my = mouse.y;
+                var shapes = myState.shapes;
+                if (action === 'select') {
+                    for (var i = shapes.length - 1; i >= 0; i--) {
+                        if (shapes[i].contains(mx, my)) {
+                            var mySel = shapes[i];
+                            console.log('ho doppio cliccato un post-it con id: ' + mySel.id);
+                            editPostIt(mySel);
+                        }
+                    }
+                }
+                else {
+                    myState.setDefault();
+                }
+            }, true);
+            shadowCanvas.addEventListener('mousemove', function (e) {
+                var action = myState.action;
+                var mouse = myState.getMouse(this.canvas, e);
+                var mx = mouse.x;
+                var my = mouse.y;
+                var shapes = myState.shapes;
+                var lines = myState.lines;
+                switch (action) {
+                    case 'newPost':
+                        myState.shadowCtx.font = "20px Georgia";
+                        var testo = formText;
+                        var testoOrdinato = ordinaTesto(myState.shadowCtx, testo, 200);
+                        var h = (testoOrdinato.length * 20) + 40;
+                        myState.shadowCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                        myState.shadowCtx.strokeStyle = 'grey';
+                        myState.shadowCtx.strokeRect(mx, my, 220, h);
+                        break;
+                    case 'drawLine':
+                        endX = mx;
+                        endY = my;
+                        var line = new Line(0, beginX, beginY, endX, endY, 'grey');
+                        myState.currentLine = line;
+                        myState.drawShadowLine(line);
+                        myState.valid = false;
+                        break;
+                    case 'changeLine':
+                        endX = mx;
+                        endY = my;
+                        line = new Line(lineId, beginX, beginY, endX, endY, 'grey');
+                        myState.drawShadowLine(line);
+                        var sel = myState.selection;
+                        sel.beginX = beginX;
+                        sel.beginY = beginY;
+                        sel.endX = endX;
+                        sel.endY = endY;
+                        myState.valid = false;
+                        break;
+                    case 'dragLine':
+                        var spostamentoX = mx - currentX;
+                        var spostamentoY = my - currentY;
+                        var line = new Line(lineId, (beginX + spostamentoX), (beginY + spostamentoY), (endX + spostamentoX), (endY + spostamentoY), 'grey');
+                        var sel = myState.selection;
+                        sel.beginX = beginX + spostamentoX;
+                        sel.beginY = beginY + spostamentoY;
+                        sel.endX = endX + spostamentoX;
+                        sel.endY = endY + spostamentoY;
+                        myState.drawShadowLine(line);
+                        myState.valid = false;
+                        break;
+                    case 'dragging':
+                        var sel = myState.selection;
+                        sel.x = mx - myState.dragoffx;
+                        sel.y = my - myState.dragoffy;
+                        myState.valid = false;
+                        break;
+                    case "select":
+                        for (var i = shapes.length - 1; i >= 0; i--) {
+                            if (shapes[i].contains(mx, my)) {
+                                if (shapes[i].mouseIsOnUpVote(mx, my) || shapes[i].mouseIsOnDownVote(mx, my)) {
+                                    $("#boardDiv").removeClass("openhand");
+                                    $("#boardDiv").addClass("pointer");
+                                }
+                                else {
+                                    console.log("contains");
+                                    $("#boardDiv").addClass("openhand");
+                                }
+                                return;
+                            }
+                        }
+                        for (var i = lines.length - 1; i >= 0; i--) {
+                            if (lines[i].contains(mx, my)) {
+                                $("#boardDiv").addClass("openhand");
+                                return;
+                            }
+                        }
+                        $("#boardDiv").removeClass("openhand");
+                        $("#boardDiv").removeClass("pointer");
+                        break;
+                }
+            }, true);
+            shadowCanvas.addEventListener('mouseup', function (e) {
+                var action = myState.action;
+                $("#boardDiv").removeClass("closedhand");
+                switch (action) {
+                    case 'drawLine':
+                        myState.shadowCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                        var line = myState.currentLine;
+                        if (line === null) {
+                            myState.action = "line";
+                            break;
+                        }
+                        line.setColor('black');
+                        myState.writeLine(line.id, line.beginX, line.beginY, line.endX, line.endY, line.color);
+                        myState.currentLine = null;
+                        myState.action = "line";
+                        break;
+                    case 'changeLine':
+                    case 'dragLine':
+                        myState.shadowCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                        var line = myState.selection;
+                        line.setColor("black");
+                        setLineState(line);
+                        myState.action = "select";
+                        document.body.style.cursor = 'default';
+                        break;
+                    case 'dragging':
+                        var sel = myState.selection;
+                        myState.action = "select";
+                        setShapePositionState(sel);
+                        break;
+                }
+                this.selectionColor = '#CC0000';
+                this.selectionWidth = 2;
+                this.interval = 30;
+                setInterval(function () {
+                    myState.draw();
+                }, myState.interval);
+            }, true);
+        }
+        CanvasState.prototype.setTool = function (string) {
+            this.setDefault();
+            switch (string) {
+                case "clear":
+                    this.clearState();
+                    break;
+                case "remove":
+                    $('#delete').addClass('highlightcanvasbutton');
+                    this.remove();
+                    break;
+                case "undo":
+                    this.undo();
+                    break;
+                case "newPost":
+                    $('#newPost').addClass('highlightcanvasbutton');
+                    this.action = "newPost";
+                    break;
+                case "select":
+                    $('#select').addClass('highlightcanvasbutton');
+                    this.action = 'select';
+                    break;
+                case "line":
+                    $('#line').addClass('highlightcanvasbutton');
+                    this.action = 'line';
+                    break;
+            }
+        };
+        CanvasState.prototype.getAction = function () {
+            return this.action;
+        };
+        CanvasState.prototype.setDefault = function () {
+            this.shadowCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+            this.action = this.defaultAction;
+            var el = document.getElementsByClassName('highlightcanvasbutton');
+            for (var i = 0; i < el.length; i++) {
+                el[i].className = "canvasbutton";
+            }
+            document.body.style.cursor = "default";
+        };
+        CanvasState.prototype.setNumberOfSections = function (number) {
+            this.numberOfSections = number;
+        };
+        CanvasState.prototype.clearState = function () {
+            var validShapes = this.idShapes;
+            var validShapesStr = JSON.stringify(validShapes);
+            var validLines = this.idLines;
+            var validLinesStr = JSON.stringify(validLines);
+            gapi.hangout.data.submitDelta({'oldValidShapes': validShapesStr, 'oldValidLines': validLinesStr, 'validShapes': '[]', 'validLines': '[]'});
+            n = 0;
+            document.getElementById("undo").disabled = false;
+        };
+        CanvasState.prototype.undo = function () {
+            var state = gapi.hangout.data.getState();
+            gapi.hangout.data.submitDelta({'oldValidShapes': '[]', 'oldValidLines': '[]', 'validShapes': state.oldValidShapes, 'validLines': state.oldValidLines});
+            document.getElementById("undo").disabled = true;
+        };
+        CanvasState.prototype.clearPencil = function () {
+            this.pencilCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+        };
+        CanvasState.prototype.writePostIt = function (text, mx, my, color) {
+            var id = mioId;
+            var shape = new Shape(id, text, mx, my);
+            shape.setFill(color);
+            if (id === (mioIdStart + 1999)) {
+                mioId = mioIdStart;
+            }
+            else {
+                mioId++;
+            }
+            this.shapes.push(shape);
+            this.valid = false;
+            this.idShapes.push(id);
+            console.log("gli id visti da dentro sono: " + this.idShapes);
+            addShapeToState(shape, this.idShapes);
+        };
+        CanvasState.prototype.writeLine = function (oldid, beginX, beginY, endX, endY, color) {
+            var id = mioId;
+            var line = new Line(id, beginX, beginY, endX, endY, color);
+            if (id === (mioIdStart + 1999)) {
+                mioId = mioIdStart;
+            }
+            else {
+                mioId++;
+            }
+            this.lines.push(line);
+            this.valid = false;
+            this.idLines.push(id);
+            addLineToState(line, this.idLines);
+        };
+        CanvasState.prototype.delete = function () {
+            if (this.selection.tipo() === "Shape") {
+                removeShapeFromState(this.selection);
+                this.selection = null;
+            }
+            else if (this.selection.tipo() === "Line") {
+                removeLineFromState(this.selection);
+                this.selection = null;
+            }
+        };
+        CanvasState.prototype.remove = function () {
+            this.action = "remove";
+        };
+        CanvasState.prototype.setShapes = function (s) {
+            this.shapes = s;
+        };
+        CanvasState.prototype.setIdShapes = function (ids) {
+            console.log("chiamata a setIdShapes, e questi sono gli IDs da mettere: " + ids);
+            this.idShapes = ids;
+        };
+        CanvasState.prototype.setLines = function (l) {
+            this.lines = l;
+        };
+        CanvasState.prototype.setIdLines = function (ids) {
+            this.idLines = ids;
+        };
+        CanvasState.prototype.invalidate = function () {
+            this.valid = false;
+        };
+        CanvasState.prototype.drawShadowLine = function (line) {
+            this.shadowCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+            line.draw(this.shadowCtx);
+        };
+        CanvasState.prototype.draw = function () {
+            if (!this.valid) {
+                this.ctx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                this.pencilCtx.clearRect(0, 0, pencilCanvas.width, pencilCanvas.height);
+                var l = this.shapes.length;
+                for (var i = 0; i < l; i++) {
+                    var shape = this.shapes[i];
+                    if (shape.x > this.width || shape.y > this.height ||
+                            shape.x + shape.w < 0 || shape.y + shape.h < 0)
+                        continue;
+                    this.shapes[i].draw(this.ctx);
+                }
+                l = this.lines.length;
+                for (i = 0; i < l; i++) {
+                    this.lines[i].draw(this.pencilCtx);
+                }
+                if (this.selection !== null) {
+                    if (this.selection.tipo() === "Shape") {
+                        console.log("tipo = shape");
+                        this.ctx.strokeStyle = this.selectionColor;
+                        this.ctx.lineWidth = this.selectionWidth;
+                        var mySel = this.selection;
+                        this.ctx.strokeRect(mySel.x, mySel.y, mySel.w, mySel.h);
+                    }
+                    else if (this.selection.tipo() === "Line") {
+                        console.log("tipo = Line");
+                        this.pencilCtx.fillStyle = "white";
+                        this.pencilCtx.lineWidth = 1;
+                        this.pencilCtx.strokeStyle = "black";
+                        this.pencilCtx.beginPath();
+                        var mySel = this.selection;
+                        this.selection.draw(this.pencilCtx);
+                        this.pencilCtx.stroke();
+                        this.pencilCtx.beginPath();
+                        this.pencilCtx.arc(mySel.beginX, mySel.beginY, 5, 2 * Math.PI, false);
+                        this.pencilCtx.fill();
+                        this.pencilCtx.stroke();
+                        this.pencilCtx.beginPath();
+                        this.pencilCtx.arc(mySel.endX, mySel.endY, 5, 2 * Math.PI, false);
+                        this.pencilCtx.fill();
+                        this.pencilCtx.stroke();
+                    }
+                }
+                if (this.numberOfSections !== 0) {
+                    cs.drawSections(this.numberOfSections);
+                }
+                this.valid = true;
+            }
+        };
+        CanvasState.prototype.drawSections = function (numberOfSections) {
+            switch (numberOfSections) {
+                case 2:
+                    this.matrixCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.strokeStyle = "black";
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo((postItCanvas.width / 2), 0);
+                    this.matrixCtx.lineTo((postItCanvas.width / 2), postItCanvas.height);
+                    this.matrixCtx.stroke();
+                    break;
+                case 4:
+                    this.matrixCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.strokeStyle = "black";
+                    this.matrixCtx.moveTo((postItCanvas.width / 2), 0);
+                    this.matrixCtx.lineTo((postItCanvas.width / 2), postItCanvas.height);
+                    this.matrixCtx.stroke();
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo(0, (postItCanvas.height / 2));
+                    this.matrixCtx.lineTo(postItCanvas.width, (postItCanvas.height / 2));
+                    this.matrixCtx.stroke();
+                    break;
+                case 6:
+                    this.matrixCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.strokeStyle = "black";
+                    this.matrixCtx.moveTo((postItCanvas.width / 2), 0);
+                    this.matrixCtx.lineTo((postItCanvas.width / 2), postItCanvas.height);
+                    this.matrixCtx.stroke();
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo(0, (postItCanvas.height / 3));
+                    this.matrixCtx.lineTo(postItCanvas.width, (postItCanvas.height / 3));
+                    this.matrixCtx.stroke();
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo(0, ((2 * postItCanvas.height) / 3));
+                    this.matrixCtx.lineTo(postItCanvas.width, ((2 * postItCanvas.height) / 3));
+                    this.matrixCtx.stroke();
+                    break;
+                case 9:
+                    this.matrixCtx.clearRect(0, 0, postItCanvas.width, postItCanvas.height);
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.strokeStyle = "black";
+                    this.matrixCtx.moveTo((postItCanvas.width / 3), 0);
+                    this.matrixCtx.lineTo((postItCanvas.width / 3), postItCanvas.height);
+                    this.matrixCtx.stroke();
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo((2 * (postItCanvas.width / 3)), 0);
+                    this.matrixCtx.lineTo((2 * (postItCanvas.width / 3)), postItCanvas.height);
+                    this.matrixCtx.stroke();
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo(0, (postItCanvas.height / 3));
+                    this.matrixCtx.lineTo(postItCanvas.width, (postItCanvas.height / 3));
+                    this.matrixCtx.stroke();
+                    this.matrixCtx.beginPath();
+                    this.matrixCtx.lineWidth = 5;
+                    this.matrixCtx.moveTo(0, ((2 * postItCanvas.height) / 3));
+                    this.matrixCtx.lineTo(postItCanvas.width, ((2 * postItCanvas.height) / 3));
+                    this.matrixCtx.stroke();
+                    break;
+            }
+        };
+        CanvasState.prototype.getMouse = function (canvas, e) {
+            var rect = this.canvas.getBoundingClientRect();
+            return {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
+        };
+        function updateInternalSectionsState(string) {
+            try {
+                if (string !== undefined) {
+                    var numberOfSections = JSON.parse(string);
+                    cs.setNumberOfSections(numberOfSections);
+                    cs.invalidate();
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function updateInternalState(stringhificato) {
+            try {
+                if (stringhificato !== undefined) {
+                    var newIdsValidShapes = stringhificato;
+                    var parsed = JSON.parse(newIdsValidShapes);
+                    var nuoveforme = [];
+                    for (i = 0; i < parsed.length; i++) {
+                        var idStr = JSON.stringify(parsed[i]);
+                        var shapeStr = gapi.hangout.data.getValue(idStr);
+                        console.log("una delle forme che sto ricevendo dall'oggetto stato: " + shapeStr);
+                        var shapePar = JSON.parse(shapeStr);
+                        var shape = new Shape(shapePar.id, shapePar.text, shapePar.x, shapePar.y, shapePar.w, shapePar.h, shapePar.ls, shapePar.ds, shapePar.fill);
+                        nuoveforme.push(shape);
+                    }
+                    cs.setIdShapes(parsed);
+                    cs.setShapes(nuoveforme);
+                    cs.invalidate();
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function updateInternalLinesState(stringifiedValidLines) {
+            try {
+                if (stringifiedValidLines !== undefined) {
+                    var parsedValidLines = JSON.parse(stringifiedValidLines);
+                    var nuovelinee = [];
+                    for (i = 0; i < parsedValidLines.length; i++) {
+                        var idStr = JSON.stringify(parsedValidLines[i]);
+                        var lineStr = gapi.hangout.data.getValue(idStr);
+                        var linePar = JSON.parse(lineStr);
+                        var line = new Line(linePar.id, linePar.beginX, linePar.beginY, linePar.endX, linePar.endY, linePar.color);
+                        nuovelinee.push(line);
+                    }
+                    cs.setIdLines(parsedValidLines);
+                    cs.setLines(nuovelinee);
+                    cs.invalidate();
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function getInfo() {
+            var state = gapi.hangout.data.getState();
+            var chiavi = gapi.hangout.data.getKeys();
+            var ids = JSON.parse(state.validShapes);
+            console.log("Queste sono tutte le chiavi presenti attualmente nell'oggetto stato: " + chiavi);
+            console.log("Questo è l'oggetto stato completo: " + state);
+            console.log("Questo è il valore in idAssignment: " + state.idassignment);
+            var stateSize = roughSizeOfObject(state);
+            console.log("Spazio totale occupato dall'oggetto Stato: ");
+            console.log("circa " + stateSize + " bytes");
+        }
+        function roughSizeOfObject(object) {
+            var objectList = [];
+            var stack = [object];
+            var bytes = 0;
+            while (stack.length) {
+                var value = stack.pop();
+                if (typeof value === 'boolean') {
+                    bytes += 4;
+                }
+                else if (typeof value === 'string') {
+                    bytes += value.length * 2;
+                }
+                else if (typeof value === 'number') {
+                    bytes += 8;
+                }
+                else if (typeof value === 'object' && objectList.indexOf(value) === -1) {
+                    objectList.push(value);
+                    for (var i in value) {
+                        stack.push(value[ i ]);
+                    }
+                }
+            }
+            return bytes;
+        }
+        function addLineToState(line, idLines) {
+            try {
+                var linea = line;
+                var id = line.id;
+                var lineaStr = JSON.stringify(linea);
+                var idStr = JSON.stringify(id);
+                var idLinesStr = JSON.stringify(idLines);
+                var validLines = "validLines";
+                var obj = {};
+                obj[idStr] = lineaStr;
+                obj[validLines] = idLinesStr;
+                gapi.hangout.data.submitDelta(obj);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function setLineState(line) {
+            var linea = line;
+            var id = line.id;
+            var lineaStr = JSON.stringify(linea);
+            console.log('la linea che sto passando all oggetto stato: ' + lineaStr);
+            var idStr = JSON.stringify(id);
+            var obj = {};
+            obj[idStr] = lineaStr;
+            gapi.hangout.data.submitDelta(obj);
+        }
+        function removeLineFromState(shape) {
+            try {
+                var linea = shape;
+                var id = linea.id;
+                var idsStr = gapi.hangout.data.getValue('validLines');
+                var idsPar = JSON.parse(idsStr);
+                var i = 0;
+                var found = false;
+                while ((i < idsPar.length) && !found) {
+                    if (idsPar[i] === id) {
+                        idsPar.splice(i, 1);
+                        found = true;
+                    }
+                    i++;
+                }
+                var newIdsStr = JSON.stringify(idsPar);
+                gapi.hangout.data.submitDelta({'validLines': newIdsStr}, [String(id)]);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function addShapeToState(shape, idShapes) {
+            try {
+                var forma = shape;
+                var id = forma.id;
+                var formaStr = JSON.stringify(forma);
+                var idStr = JSON.stringify(id);
+                var idShapesStr = JSON.stringify(idShapes);
+                var validShapes = "validShapes";
+                var obj = {};
+                obj[idStr] = formaStr;
+                obj[validShapes] = idShapesStr;
+                gapi.hangout.data.submitDelta(obj);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function setShapeState(shape) {
+            var forma = shape;
+            var id = forma.id;
+            var formaStr = JSON.stringify(forma);
+            console.log('la forma che sto passando all oggetto stato: ' + formaStr);
+            var idStr = JSON.stringify(id);
+            var obj = {};
+            obj[idStr] = formaStr;
+            gapi.hangout.data.submitDelta(obj);
+        }
+        function setShapePositionState(shape) {
+            var forma = shape;
+            var id = forma.id;
+            var idStr = JSON.stringify(id);
+            var shapeStr = gapi.hangout.data.getValue(idStr);
+            var shapePar = JSON.parse(shapeStr);
+            var updatedShape = new Shape(shapePar.id, shapePar.text, forma.x, forma.y, shapePar.w, shapePar.h, shapePar.ls, shapePar.ds, shapePar.fill);
+            setShapeState(updatedShape);
+        }
+        function setShapeLikesState(shape) {
+            var forma = shape;
+            var id = forma.id;
+            var idStr = JSON.stringify(id);
+            var shapeStr = gapi.hangout.data.getValue(idStr);
+            var shapePar = JSON.parse(shapeStr);
+            var updatedShape = new Shape(shapePar.id, shapePar.text, shapePar.x, shapePar.y, shapePar.w, shapePar.h, forma.ls, forma.ds, shapePar.fill);
+            setShapeState(updatedShape);
+        }
+        function removeShapeFromState(shape) {
+            try {
+                var forma = shape;
+                var id = forma.id;
+                var idsStr = gapi.hangout.data.getValue('validShapes');
+                var idsPar = JSON.parse(idsStr);
+                var i = 0;
+                var found = false;
+                while ((i < idsPar.length) && !found) {
+                    if (idsPar[i] === id) {
+                        idsPar.splice(i, 1);
+                        found = true;
+                    }
+                    i++;
+                }
+                var newIdsStr = JSON.stringify(idsPar);
+                gapi.hangout.data.submitDelta({'validShapes': newIdsStr}, [String(id)]);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        function updateInternalCanvasStateSize(string) {
+            try {
+                if (string !== undefined) {
+                    document.getElementById("shadowCanvas").width = "2400";
+                    document.getElementById("shadowCanvas").height = "1600";
+                    document.getElementById("postItCanvas").width = "2400";
+                    document.getElementById("postItCanvas").height = "1600";
+                    document.getElementById("pencilCanvas").width = "2400";
+                    document.getElementById("pencilCanvas").height = "1600";
+                    document.getElementById("matrixCanvas").width = "2400";
+                    document.getElementById("matrixCanvas").height = "1600";
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        gapi.hangout.data.onStateChanged.add(function (event) {
+            updateInternalState(event.state.validShapes);
+            updateInternalLinesState(event.state.validLines);
+            updateInternalCanvasStateSize(event.state.size);
+            updateInternalSectionsState(event.state.sections);
+            n++;
+            if (n > 5) {
+                document.getElementById("undo").disabled = true;
+            }
+        });
+    </script>
+</body>
