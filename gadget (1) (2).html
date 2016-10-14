@@ -71,16 +71,11 @@ function addHangout(code) {
   var url_video = gapi.hangout.onair.getYouTubeLiveId();
   var participant_id = (gapi.hangout.getLocalParticipant()).person.id;
   var link = "https://script.google.com/macros/s/AKfycbxgLoFJbvqaLslj1TgAz0SIYqccWC4qVAlUKAV6JUpli5M2j38/exec?prefix=saveElem";
-  var host;
-  if (array[3].indexOf("%3A")>0){
-      host=array[3].replace("%3A",":");
-      
-    }    
-  else{host=array[3]}
+
                                                                                                                               $.ajax({
     type: "GET",
     url: link,
-    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:host, taskRelated: array[2]},
+    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:array[3], taskRelated: array[2]},
     dataType: "script"
   }).done(function(data) {
     console.log(data); //data returned : UNDEFINED
