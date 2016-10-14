@@ -1954,14 +1954,11 @@ function sendImage(image) {
             if (typeof gd != "undefined") {
                 var array = gd.split('e');
                 var obj = {};
-		    var host;
-  if (array[1].indexOf("%3A")>0){
-      host=array[1].replace("%3A",":");
-      
-    }    
-  else{host=array[1]}
+		  
+    
+
                 obj["cafeId"]=array[0];
-		obj["host"]=host;
+		obj["host"]=array[1];
                 window.formAdded = true;
                 gapi.hangout.data.submitDelta(obj);  
                 var hangout_id = gapi.hangout.getHangoutUrl();
@@ -1972,7 +1969,7 @@ function sendImage(image) {
 		    $.ajax({
                     type: "GET",
                     url: link,
-                    data: {urlHangout: hangout_id, linkVideo: url_video, containerId: array[0],host:host,hangout:true},
+                    data: {urlHangout: hangout_id, linkVideo: url_video, containerId: array[0],host:array[1],hangout:true},
                     dataType: "script"
                 }).done(function(data) {
                     console.log(data); //data returned : UNDEFINED
