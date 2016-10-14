@@ -37,75 +37,7 @@ background: -moz-linear-gradient(bottom, #ddd, #aaa); }
           
                         <div class="form-group">
                             <label for="formTitleInput">Insert Code Here</label>
-                            <input type="text" class="form-control" id="formTitleInput" name=formTitle" placeholder="code" required>
-                        </div>
-
-
-                        <button type="submit" id="formSubmit" class="btn btn-default hidden">Submit</button>
-                        <div class="alert alert-warning hidden" id="formValidationWarning"></div>
-                        <div class="alert alert-danger hidden" id="formServerAlert">Server cannot be reached, try again later.</div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="codeButton">Save Code</button>
-
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->  
-
-
-
-<script>
-
-function addHangout(code) {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-      vars[key] = value;
-  });
-  var gd = vars["gd"];
-  //var gd = code;
-  var array = gd.split('e');
-<!-- Standard boilerplate to start hangouts.  Without these, your Hangout will not start. -->
-<script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
-<script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.4"></script>
-<script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-<script type="text/javascript" src="//www.google.com/jsapi"></script>
-<script type="text/javascript">google.load("jquery", "1.7.1");</script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> 
-<style type="text/css">
-   
-<!--
-.button {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
-  background: -moz-linear-gradient(top, #fff, #ddd);  
-  border: 1px solid #bbb;
-}
-
-.button:active {
-background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#333)); 
-background: -moz-linear-gradient(bottom, #ddd, #aaa); }
-
--->
-</style>
-<body style="padding: 10px">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
- <div class="modal fade" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="compileFormModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-
-                    <h4 class="modal-title"> Code Check</h4>
-                </div>
-                <div class="modal-body" >
-                    <form role="form" id="codeForm">
-          
-                        <div class="form-group">
-                            <label for="formTitleInput">Insert Code Here</label>
-                            <input type="text" class="form-control" id="formTitleInput" name=formTitle" placeholder="code" required>
+                            <input type="text" class="form-control" id="formTitleInput" name="formTitle" placeholder="code" required>
                         </div>
 
 
@@ -135,18 +67,14 @@ function addHangout(code) {
   //var gd = code;
   var array = gd.split('e');
   console.log(array[0]+" " + array[1] + " " + array[2]);
-                                                                                    
-                                  
   var hangout_id= gapi.hangout.getHangoutUrl();
   var url_video = gapi.hangout.onair.getYouTubeLiveId();
   var participant_id = (gapi.hangout.getLocalParticipant()).person.id;
   var link = "https://script.google.com/macros/s/AKfycbxgLoFJbvqaLslj1TgAz0SIYqccWC4qVAlUKAV6JUpli5M2j38/exec?prefix=saveElem";
-
-  
   $.ajax({
     type: "GET",
     url: link,
-    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host: array[3], taskRelated: array[2]},
+    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:array[3], taskRelated: array[2]},
     dataType: "script"
   }).done(function(data) {
     console.log(data); //data returned : UNDEFINED
@@ -169,26 +97,6 @@ function init() {
                addHangout();           
             } 
         }
-      });
- }
-
- $('#codeButton').on('click',function(e){
-          $('#codeModal').modal('hide');
-          var code = $('#codeForm')[0][0].value;
-          addHangout(code);  
- }); 
-
- function getParameters() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
-init();
-</script>
-
       });
  }
 
