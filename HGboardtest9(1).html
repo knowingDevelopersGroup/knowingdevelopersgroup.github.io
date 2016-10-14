@@ -1,4 +1,4 @@
-﻿<!-- Standard boilerplate to start hangouts.  Without these, your Hangout will not start. -->
+<!-- Standard boilerplate to start hangouts.  Without these, your Hangout will not start. -->
 <script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
 <script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.4"></script>
 <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
@@ -1954,9 +1954,6 @@ function sendImage(image) {
             if (typeof gd != "undefined") {
                 var array = gd.split('e');
                 var obj = {};
-		  
-    
-
                 obj["cafeId"]=array[0];
 		obj["host"]=array[1];
                 window.formAdded = true;
@@ -1964,9 +1961,7 @@ function sendImage(image) {
                 var hangout_id = gapi.hangout.getHangoutUrl();
                 var url_video = gapi.hangout.onair.getYouTubeLiveId();
                 var link = "https://script.google.com/macros/s/AKfycbw7YF12JVz3RdqrpMHUte5tYAL5dzidpIISV3VIqBGkRxT4IWk/exec?prefix=saveElem";
-                 
-		    
-		    $.ajax({
+                $.ajax({
                     type: "GET",
                     url: link,
                     data: {urlHangout: hangout_id, linkVideo: url_video, containerId: array[0],host:array[1],hangout:true},
