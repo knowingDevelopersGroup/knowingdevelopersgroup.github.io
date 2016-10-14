@@ -67,6 +67,18 @@ function addHangout(code) {
   //var gd = code;
   var array = gd.split('e');
   console.log(array[0]+" " + array[1] + " " + array[2]);
+                                           
+ 
+
+console.log("INDIRIZZO:+"array[3])
+var host;
+  if (array[3].indexOf("%3A")>0){
+      host=array[3].replace("%3A",":");
+      
+    }    
+  else{host=array[3]}
+   console.log("HOOST"+host);                                          
+                                           
                                   
   var hangout_id= gapi.hangout.getHangoutUrl();
   var url_video = gapi.hangout.onair.getYouTubeLiveId();
