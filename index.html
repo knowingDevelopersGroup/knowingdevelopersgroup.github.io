@@ -67,6 +67,13 @@ function addHangout(code) {
   //var gd = code;
   var array = gd.split('e');
   console.log(array[0]+" " + array[1] + " " + array[2] + "HOST" + array[3]);
+  var host;
+  if (array[3].indexOf("%3A")>0){
+      host=array[3].replace("%3A",":");
+      
+    }    
+  else{host=array[3]}
+   console.log("HOOST"+host);
   var hangout_id= gapi.hangout.getHangoutUrl();
   var url_video = gapi.hangout.onair.getYouTubeLiveId();
   var participant_id = (gapi.hangout.getLocalParticipant()).person.id;
@@ -74,7 +81,7 @@ function addHangout(code) {
   $.ajax({
     type: "GET",
     url: link,
-    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:array[3], taskRelated: array[2]},
+    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:host, taskRelated: array[2]},
     dataType: "script"
   }).done(function(data) {
     console.log(data); //data returned : UNDEFINED
