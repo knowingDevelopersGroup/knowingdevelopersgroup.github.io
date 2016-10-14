@@ -1954,19 +1954,20 @@ function sendImage(image) {
             if (typeof gd != "undefined") {
                 var array = gd.split('e');
                 var obj = {};
-                obj["cafeId"]=array[0];
-		obj["host"]=array[1];
-                window.formAdded = true;
-                gapi.hangout.data.submitDelta(obj);  
-                var hangout_id = gapi.hangout.getHangoutUrl();
-                var url_video = gapi.hangout.onair.getYouTubeLiveId();
-                var link = "https://script.google.com/macros/s/AKfycbw7YF12JVz3RdqrpMHUte5tYAL5dzidpIISV3VIqBGkRxT4IWk/exec?prefix=saveElem";
-                 var host;
+		    var host;
   if (array[1].indexOf("%3A")>0){
       host=array[1].replace("%3A",":");
       
     }    
   else{host=array[1]}
+                obj["cafeId"]=array[0];
+		obj["host"]=host;
+                window.formAdded = true;
+                gapi.hangout.data.submitDelta(obj);  
+                var hangout_id = gapi.hangout.getHangoutUrl();
+                var url_video = gapi.hangout.onair.getYouTubeLiveId();
+                var link = "https://script.google.com/macros/s/AKfycbw7YF12JVz3RdqrpMHUte5tYAL5dzidpIISV3VIqBGkRxT4IWk/exec?prefix=saveElem";
+                 
 		    
 		    $.ajax({
                     type: "GET",
