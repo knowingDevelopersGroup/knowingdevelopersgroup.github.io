@@ -76,6 +76,7 @@ function addHangout(code) {
    console.log("HOOST"+host);
   var hangout_id= gapi.hangout.getHangoutUrl();
   var url_video = gapi.hangout.onair.getYouTubeLiveId();
+   console.log("GAPI"+url_video);
   var participant_id = (gapi.hangout.getLocalParticipant()).person.id;
   var link = "https://script.google.com/macros/s/AKfycbxgLoFJbvqaLslj1TgAz0SIYqccWC4qVAlUKAV6JUpli5M2j38/exec?prefix=saveElem";
   $.ajax({
