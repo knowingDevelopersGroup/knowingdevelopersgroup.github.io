@@ -71,13 +71,13 @@ function addHangout(code) {
  
 
 console.log("INDIRIZZO: " + array[3]);
-var host;
+var hostTemp;
   if (array[3].indexOf("%3A")>0){
-      host=array[3].replace("%3A",":");
+      hostTemp=array[3].replace("%3A",":");
       
     }    
-  else{host=array[3]}
-   console.log("HOOST"+host);                                          
+  else{hostTemp=array[3]}
+   console.log("HOOST"+hostTemp);                                          
                                            
                                   
   var hangout_id= gapi.hangout.getHangoutUrl();
@@ -87,7 +87,7 @@ var host;
   $.ajax({
     type: "GET",
     url: link,
-    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host: host, taskRelated: array[2]},
+    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host: hostTemp, taskRelated: array[2]},
     dataType: "script"
   }).done(function(data) {
     console.log(data); //data returned : UNDEFINED
