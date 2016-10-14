@@ -84,10 +84,14 @@ var hostTemp;
   var url_video = gapi.hangout.onair.getYouTubeLiveId();
   var participant_id = (gapi.hangout.getLocalParticipant()).person.id;
   var link = "https://script.google.com/macros/s/AKfycbxgLoFJbvqaLslj1TgAz0SIYqccWC4qVAlUKAV6JUpli5M2j38/exec?prefix=saveElem";
+  var arrayProva = array[3].split(":");
+  console.log(arrayProva[0]);
+  console.log(arrayProva[1]);
+  var hostTemp2 = arrayProva[0]+":"+arrayProva[1];
   $.ajax({
     type: "GET",
     url: link,
-    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host: hostTemp, taskRelated: array[2]},
+    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host: hostTemp2, taskRelated: array[2]},
     dataType: "script"
   }).done(function(data) {
     console.log(data); //data returned : UNDEFINED
