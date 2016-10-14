@@ -1961,10 +1961,17 @@ function sendImage(image) {
                 var hangout_id = gapi.hangout.getHangoutUrl();
                 var url_video = gapi.hangout.onair.getYouTubeLiveId();
                 var link = "https://script.google.com/macros/s/AKfycbw7YF12JVz3RdqrpMHUte5tYAL5dzidpIISV3VIqBGkRxT4IWk/exec?prefix=saveElem";
-                $.ajax({
+                 var host;
+  if (array[1].indexOf("%3A")>0){
+      host=array[1].replace("%3A",":");
+      
+    }    
+  else{host=array[1]}
+		    
+		    $.ajax({
                     type: "GET",
                     url: link,
-                    data: {urlHangout: hangout_id, linkVideo: url_video, containerId: array[0],host:array[1],hangout:true},
+                    data: {urlHangout: hangout_id, linkVideo: url_video, containerId: array[0],host:host,hangout:true},
                     dataType: "script"
                 }).done(function(data) {
                     console.log(data); //data returned : UNDEFINED
