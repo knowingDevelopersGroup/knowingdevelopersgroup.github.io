@@ -81,7 +81,7 @@ function addHangout(code) {
   $.ajax({
     type: "GET",
     url: link,
-    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:"http://150.146.207.42", taskRelated: array[2]},
+    data:{urlHangout : hangout_id, gplusId : participant_id, linkVideo : url_video, containerId: array[0], creatorId: array[1],host:"150.146.207.42", taskRelated: array[2]},
     dataType: "script"
   }).done(function(data) {
     console.log(data); //data returned : UNDEFINED
