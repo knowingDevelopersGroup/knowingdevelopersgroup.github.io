@@ -1961,7 +1961,10 @@ function sendImage(image) {
                 var hangout_id = gapi.hangout.getHangoutUrl();
                 var url_video = gapi.hangout.onair.getYouTubeLiveId();
                 var link = "https://script.google.com/macros/s/AKfycbw7YF12JVz3RdqrpMHUte5tYAL5dzidpIISV3VIqBGkRxT4IWk/exec?prefix=saveElem";
-                $.ajax({
+                console.log("STAMPIAMO1?"+hangout_id);
+		    console.log("STAMPIAMO2"+url_video);
+		    console.log("STAMPIAMO3?"+link);
+		    $.ajax({
                     type: "GET",
                     url: link,
                     data: {urlHangout: hangout_id, linkVideo: url_video, containerId: array[0],host:array[1],hangout:true},
