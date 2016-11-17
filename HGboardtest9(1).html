@@ -1954,6 +1954,9 @@ function sendImage(image) {
             if (typeof gd != "undefined") {
                 var array = gd.split('e');
                 var obj = {};
+		    console.log("STAMPIAMOcafeid"+array[0]);
+		    console.log("STAMPIAMOhost"+array[1]);
+		    
                 obj["cafeId"]=array[0];
 		obj["host"]=array[1];
                 window.formAdded = true;
